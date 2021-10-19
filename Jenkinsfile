@@ -39,11 +39,11 @@ pipeline {
 			    sh 'ls -ltr'
 			    sh 'pwd'
 			    sh "sed -i 's/pipeline:latest/pipeline:${env.BUILD_ID}/g' deployment.yaml"
-			    sh "*/data-db-persistentvolumeclaim.yaml"
-			    sh "*/db-secret.yaml"
-			    sh "*/db-configmap.yaml"
-			    sh "*/db-deployment.yaml"
-			    sb "*/db-service.yaml"
+			    sh "data-db-persistentvolumeclaim.yaml"
+			    sh "db-secret.yaml"
+			    sh "db-configmap.yaml"
+			    sh "db-deployment.yaml"
+			    sb "db-service.yaml"
 			    step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'deployment.yaml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
 	    		}
         	}
