@@ -2,8 +2,8 @@ pipeline {
     agent any
 	environment {
 		PROJECT_ID = 'striped-bastion-329118'
-                CLUSTER_NAME = 'cluster-1'
-                LOCATION = 'us-central1-c'
+                CLUSTER_NAME = 'jenkins'
+                LOCATION = 'asia-southeast1-a'
                 CREDENTIALS_ID = 'kubernetes'
 	}
 	
